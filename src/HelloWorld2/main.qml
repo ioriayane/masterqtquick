@@ -1,0 +1,32 @@
+//使用するエレメントに合わせてプラグインをインポートする [1]
+import QtQuick 2.2
+import QtQuick.Window 2.1
+
+//Windowを作成するエレメント　[2]
+Window {
+  //表示状態で作成する
+  visible: true
+  //コンテンツ領域のサイズ
+  width: 360
+  height: 360
+  //ウインドウのタイトル
+//    title: qsTr("Hello World")
+
+  //マウス入力を受け付ける領域の設定
+  MouseArea {
+    //親エレメントの全体に配置
+    anchors.fill: parent
+    //クリックされた時の動作を指定（アプリの終了）
+    onClicked: {
+      Qt.quit();
+    }
+  }
+
+  //文字列を配置
+  Text {
+    //表示する文字列を指定
+    text: qsTr("Hello World")
+    //親のエレメントの中心に配置
+    anchors.centerIn: parent
+  }
+}
