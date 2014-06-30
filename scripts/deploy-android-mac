@@ -1,0 +1,23 @@
+export ANDROID_HOME=/Users/iori/adt-bundle-mac-x86_64-20140321/sdk
+export ANDROID_NDK_HOST=darwin-x86_64
+export ANDROID_NDK_ROOT=/Users/iori/android-ndk-r9d
+export ANDROID_NDK_TOOLCHAIN_PREFIX=arm-linux-androideabi
+export ANDROID_NDK_TOOLCHAIN_VERSION=4.8
+export ANDROID_NDK_TOOLS_PREFIX=arm-linux-androideabi
+export ANDROID_SDK_ROOT=/Users/iori/adt-bundle-mac-x86_64-20140321/sdk
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home
+
+ビルド
+~/Qt/5.3/android_armv7/bin/qmake -r
+make
+
+パッケージの作成とデバイスへ転送
+make install INSTALL_ROOT=./android-build
+~/Qt/5.3/android_armv7/bin/androiddeployqt --input ./android-libHelloWorld.so-deployment-settings.json \
+ --output ./android-build --deployment bundled --install --ant ~/apache-ant-1.9.4/bin/ant \
+ --android-platform android-19 --jdk /Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home \
+ --device DEVICE_ID --sign ./helloworld.keystore helloqt --storepass STOREPASS --keypass KEYPASS
+
+デバイスで実行
+~/adt-bundle-mac-x86_64-20140321/sdk/platform-tools/adb shell \
+ am start -n org.qtproject.example.HelloWorld/org.qtproject.qt5.android.bindings.QtActivity

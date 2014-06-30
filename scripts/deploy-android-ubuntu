@@ -1,0 +1,18 @@
+export ANDROID_HOME=~/adt-bundle-linux-x86_64-20140321/sdk
+export ANDROID_NDK_HOST=linux-x86_64
+export ANDROID_NDK_ROOT=~/android-ndk-r9d
+export ANDROID_NDK_TOOLCHAIN_PREFIX=arm-linux-androideabi
+export ANDROID_NDK_TOOLCHAIN_VERSION=4.8
+export ANDROID_NDK_TOOLS_PREFIX=arm-linux-androideabi
+export ANDROID_SDK_ROOT=~/adt-bundle-linux-x86_64-20140321/sdk
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+
+~/Qt/5.3/android_armv7/bin/qmake -r 
+make
+make install INSTALL_ROOT=./android-build
+
+~/Qt/5.3/android_armv7/bin/androiddeployqt --input ./android-libHelloWorld.so-deployment-settings.json \
+ --output ./android-build --deployment bundled --install --ant /usr/bin/ant --android-platform android-19 \
+ --jdk /usr/lib/jvm/java-7-openjdk-amd64 --device DEVICE_ID \
+ --sign ./helloworld.keystore helloqt --storepass STOREPASS --keypass KEYPASS
+
