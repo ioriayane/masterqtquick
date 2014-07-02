@@ -55,7 +55,7 @@ ApplicationWindow {
         }
       }
       //クリックしたらテキストの表示を変更
-      onClicked: message.text = "Bring our light to world far and wide!"
+      onClicked: message.text = "Bring our zvezda's light to world far and wide!"
     }
 
   }
