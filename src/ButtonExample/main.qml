@@ -47,7 +47,7 @@ ApplicationWindow {
         }
         //3つ目の項目
         MenuItem {
-          text: "Natalia"
+          text: "Natasha"
           onTriggered: message.text = "Yes Hanazawa!"
         }
       }
