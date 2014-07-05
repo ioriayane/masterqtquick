@@ -1,5 +1,14 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>DarkButtonStyle.qml</file>
+        <file>DarkMenuStyle.qml</file>
+        <file>falcon.png</file>
+        <file>tokyo.png</file>
+        <file>zvezda.png</file>
+        <file>check.png</file>
+        <file>sub_nor.png</file>
+        <file>sub_sel.png</file>
+        <file>DarkMenuBarStyle.qml</file>
     </qresource>
 </RCC>
