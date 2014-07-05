@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="210mm"
@@ -19,7 +20,29 @@
    inkscape:export-xdpi="1.3683501"
    inkscape:export-ydpi="1.3683501">
   <defs
-     id="defs4" />
+     id="defs4">
+    <linearGradient
+       id="linearGradient3769">
+      <stop
+         id="stop3771"
+         offset="0"
+         style="stop-color:#bebebe;stop-opacity:1;" />
+      <stop
+         id="stop3773"
+         offset="1"
+         style="stop-color:#ffffff;stop-opacity:1;" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3769"
+       id="linearGradient3767"
+       x1="60.714283"
+       y1="898.43359"
+       x2="215"
+       y2="669.86218"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-46.428571,7.8571429)" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -28,10 +51,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="206.46217"
-     inkscape:cy="376.4321"
+     inkscape:cx="86.819313"
+     inkscape:cy="147.86067"
      inkscape:document-units="px"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer5"
      showgrid="true"
      inkscape:window-width="1414"
      inkscape:window-height="956"
@@ -110,7 +133,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer3"
-     inkscape:label="東京">
+     inkscape:label="東京"
+     sodipodi:insensitive="true">
     <path
        style="fill:#5ce300;fill-opacity:1;stroke:#048900;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 340,822.36218 c 0,0 -25.23889,-81.8175 -50,-110 -24.76111,-28.1825 -88.57143,-59.2857 -88.57143,-59.2857 0,0 28.06866,-38.57493 54.28571,-53.57144 26.21705,-14.99652 53.293,-27.24704 84.28572,-27.14286 30.99272,0.10418 70.71429,7.85714 93.57143,26.42857 22.85714,18.57143 47.14286,54.28572 47.14286,54.28572 0,0 -63.38307,29.69573 -90.71429,59.28571 -27.33122,29.58998 -50,110 -50,110 z"
@@ -119,5 +143,41 @@
        sodipodi:nodetypes="czczzzczc"
        inkscape:export-xdpi="4.8899999"
        inkscape:export-ydpi="4.8899999" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer4"
+     inkscape:label="チェック"
+     sodipodi:insensitive="true">
+    <path
+       style="fill:none;stroke:url(#linearGradient3767);stroke-width:40;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 27.857143,790.93361 35.714286,101.42857 c 0,0 20.71428,-82.38096 36.07143,-116.07143 C 115,742.60027 155.71429,690.21932 155.71429,690.21932"
+       id="path2991"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cczc"
+       inkscape:export-xdpi="4.9369721"
+       inkscape:export-ydpi="4.9369721" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer5"
+     inkscape:label="三角">
+    <path
+       sodipodi:type="star"
+       style="fill:#e7e7e7;fill-opacity:1;stroke:none"
+       id="path3778"
+       sodipodi:sides="3"
+       sodipodi:cx="294.28571"
+       sodipodi:cy="908.79077"
+       sodipodi:r1="39.44772"
+       sodipodi:r2="19.72386"
+       sodipodi:arg1="0"
+       sodipodi:arg2="1.0471976"
+       inkscape:flatsided="true"
+       inkscape:rounded="5.8496533e-017"
+       inkscape:randomized="0"
+       d="m 333.73343,908.79077 -59.17158,34.16273 0,-68.32546 z"
+       inkscape:transform-center-x="-9.8619295"
+       transform="translate(-45,90.714286)" />
   </g>
 </svg>
