@@ -44,40 +44,40 @@ ApplicationWindow {
       //アプリケーションを終了
       MenuItem {
         text: "Quit"
-        shortcut: StandardKey.Quit            //ショートカットの設定(Windowsでは無効) [6]
+        shortcut: StandardKey.Quit            //ショートカットの設定 [6]
         onTriggered: Qt.quit()
       }
     }
     //2つ目のメニュー
     Menu {
       title: "Status"
-      //2階層目のメニュー1つ目  [7]
+      //2階層目のメニュー1つ目
       Menu {
         title: "Character"
         MenuItem {
           text: "Venyera"
-          shortcut: "v"             //ショートカットの設定（小文字のv） [8]
-          iconSource: "zvezda.png"  //アイコンの設定             [9]
-          onTriggered: recentItem.addRecentItem(text, iconSource)
+          shortcut: "v"             //ショートカットの設定（小文字のv）         [8]
+          iconSource: "zvezda.png"  //アイコンの設定                     [9]
+          onTriggered: recentItem.addRecentItem(text, iconSource)  //[10]
         }
         MenuItem {
           text: "White Falcon"
-          shortcut: "ctrl+w"        //ショートカットの設定  [10]
-          iconSource: "falcon.png"  //アイコンの設定     [11]
-          onTriggered: recentItem.addRecentItem(text, iconSource)
+          shortcut: "ctrl+w"        //ショートカットの設定                  [11]
+          iconSource: "falcon.png"  //アイコンの設定                     [12]
+          onTriggered: recentItem.addRecentItem(text, iconSource) //[13]
         }
         MenuItem {
           text: "Kyoshiro Jimon"
-          shortcut: "shift+k"       //ショートカットの設定  [12]
-          iconSource: "tokyo.png"   //アイコンの設定     [13]
-          onTriggered: recentItem.addRecentItem(text, iconSource)
+          shortcut: "shift+k"       //ショートカットの設定                  [14]
+          iconSource: "tokyo.png"   //アイコンの設定                     [15]
+          onTriggered: recentItem.addRecentItem(text, iconSource) //[16]
         }
       }
       //2階層目のメニュー2つ目
       Menu {
-        id: contextMenu       //コンテキストメニューとしても使う  [14]
+        id: contextMenu       //コンテキストメニューとしても使う  [17]
         title: "Society"
-        //メニューをまとめるためのグループを定義 [15]
+        //メニューをまとめるためのグループを定義 [18]
         ExclusiveGroup {
           id: group
           //選択されている項目が変更された
@@ -85,18 +85,18 @@ ApplicationWindow {
         }
         MenuItem {
           text: "Zvezda"            //表示する文字列
-          exclusiveGroup: group     //所属するグループの指定     [16]
+          exclusiveGroup: group     //所属するグループの指定     [19]
           checkable: true           //チェックできるように設定
           checked: true             //1つ目をデフォルト状態にする
         }
         MenuItem {
           text: "White Light"       //表示する文字列
-          exclusiveGroup: group     //所属するグループの指定     [17]
+          exclusiveGroup: group     //所属するグループの指定     [20]
           checkable: true           //チェックできるように設定
         }
         MenuItem {
           text: "Tokyo Army"        //表示する文字列
-          exclusiveGroup: group     //所属するグループの指定     [18]
+          exclusiveGroup: group     //所属するグループの指定     [21]
           checkable: true           //チェックできるように設定
         }
       }
@@ -110,13 +110,13 @@ ApplicationWindow {
     text: "Menu Example"
   }
 
-  //マウス入力を受け付ける [19]
+  //マウス入力を受け付ける [22]
   MouseArea {
     anchors.fill: parent              //ウインドウ全体
     acceptedButtons: Qt.RightButton   //右クリックのみ
     //クリック時の処理
     onClicked: {
-      //メニューバーの一部をポップアップ  [20]
+      //メニューバーの一部をポップアップ  [23]
       contextMenu.popup()
     }
   }
