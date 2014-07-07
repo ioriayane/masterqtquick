@@ -8,39 +8,30 @@ ApplicationWindow {
   height: 240
   title: qsTr("Style Example")
 
-  //メニューバーを作成
-  menuBar: MenuBar {
-    //スタイルを設定
-    style: MenuBarStyle {
-      background: Rectangle {
-        gradient: Gradient {
-          GradientStop { position: 0   ; color: "#aaa" }
-          GradientStop { position: 0.4 ; color: "#888" }
-          GradientStop { position: 1   ; color: "#666" }
-        }
-      }
-      itemDelegate: Item {
-        width: 100//textItem.contentWidth
-        height: 30//textItem.contentHeight
-        Text {
-          id: textItem
-        text: formatMnemonic(styleData.text, true)    //文字列を指定
-        color: styleData.selected ? "black" : "white" //カーソルがのったら黒
-      }}
+  //回避策用のコード3行
+//  MenuBarEx {
+//    //使用するメニュー全部に設定するスタイル
+//    menuStyle: Component { DarkMenuStyle {} }
 
+  //回避策を使うときはここから
+  menuBar: MenuBar {
+    //メニューバーのスタイルを設定            [1]
+    style: DarkMenuBarStyle {
+      //使用するメニュー全部に設定するスタイル   [2]
       menuStyle: DarkMenuStyle {}
     }
+  //ここまでをコメントアウト
 
-    //1つ目のメニュー
+    //2つ目のメニュー
     Menu {
-      title: "&File"
-      MenuItem { text: "&Open"; shortcut: StandardKey.Open }
+      title: "File"
+      MenuItem { text: "&Open"; shortcut: StandardKey.Open; enabled: false }
       MenuSeparator {}
       MenuItem { text: "&Quit"; onTriggered: Qt.quit() }
     }
     //2つ目のメニュー
     Menu {
-      title: "&Status"
+      title: "Status"
       //2階層目のメニュー1つ目
       Menu {
         title: "&Character"
@@ -52,7 +43,7 @@ ApplicationWindow {
       Menu {
         id: contextMenu         //コンテキストメニューとしても使う
         title: "&Society"
-        style: DarkMenuStyle {} //コンテキストメニューでも使用するので単体でも指定する
+        style: DarkMenuStyle {} //コンテキストメニューでも使用するので単体でも指定する  [3]
         //メニューをまとめるためのグループを定義
         ExclusiveGroup { id: group }
         MenuItem { text: "&Zvezda"; exclusiveGroup: group; checkable: true; checked: true }
@@ -82,11 +73,10 @@ ApplicationWindow {
     Button {
       //ボタンの文字列
       text: "Click!"
-      //ボタン用のスタイル設定
+      //ボタン用のスタイル設定   [4]
       style: DarkButtonStyle {}
       //クリックしたらテキストの表示を変更
       onClicked: message.text = "Bring our zvezda's light to world far and wide!"
     }
   }
-
 }

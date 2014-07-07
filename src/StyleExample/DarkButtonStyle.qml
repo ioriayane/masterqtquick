@@ -3,9 +3,9 @@ import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.2
 
 ButtonStyle {
-  //背景のスタイル
+  //背景のスタイル   [1]
   background: Rectangle {
-    //最低サイズ
+    //最低サイズ   [2]
     implicitWidth: 50
     implicitHeight: 25
     //枠線（フォーカスがあると太くなる）
@@ -13,14 +13,14 @@ ButtonStyle {
     border.color: "#444"
     //角丸にする
     radius: 3
-    //グラデーションで塗りつぶし
+    //グラデーションで塗りつぶし [3]
     gradient: Gradient {
       GradientStop { position: 0   ; color: control.pressed ? "#666" : "#aaa" }
       GradientStop { position: 0.4 ; color: control.pressed ? "#888" : "#888" }
       GradientStop { position: 1   ; color: control.pressed ? "#888" : "#666" }
     }
   }
-  //文字列のスタイル
+  //文字列のスタイル  [4]
   label: Text {
     //ボタンの中心に表示
     verticalAlignment: Text.AlignVCenter

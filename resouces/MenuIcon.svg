@@ -178,6 +178,27 @@
        inkscape:randomized="0"
        d="m 333.73343,908.79077 -59.17158,34.16273 0,-68.32546 z"
        inkscape:transform-center-x="-9.8619295"
-       transform="translate(-45,90.714286)" />
+       transform="translate(-11.428571,44.285715)"
+       inkscape:export-xdpi="10.537801"
+       inkscape:export-ydpi="10.537801" />
+    <path
+       sodipodi:type="star"
+       style="fill:#353535;fill-opacity:1;stroke:none"
+       id="path3778-3"
+       sodipodi:sides="3"
+       sodipodi:cx="294.28571"
+       sodipodi:cy="908.79077"
+       sodipodi:r1="39.44772"
+       sodipodi:r2="19.72386"
+       sodipodi:arg1="0"
+       sodipodi:arg2="1.0471976"
+       inkscape:flatsided="true"
+       inkscape:rounded="5.8496533e-017"
+       inkscape:randomized="0"
+       d="m 333.73343,908.79077 -59.17158,34.16273 0,-68.32546 z"
+       inkscape:transform-center-x="-9.8619295"
+       transform="translate(-122.71906,87.857125)"
+       inkscape:export-xdpi="10.537801"
+       inkscape:export-ydpi="10.537801" />
   </g>
 </svg>

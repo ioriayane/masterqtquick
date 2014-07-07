@@ -3,7 +3,7 @@ import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.2
 
 MenuStyle {
-  //メニュー全体の背景
+  //メニュー全体の背景 [1]
   frame: Rectangle {
     //枠線
     border.width: 1
@@ -16,7 +16,7 @@ MenuStyle {
     }
   }
 
-  //区切り
+  //区切り [2]
   separator: Item {
     Rectangle {
       anchors.centerIn: parent
@@ -26,9 +26,9 @@ MenuStyle {
     }
   }
 
-  //項目の背景
+  //項目の背景 [3]
   itemDelegate.background: Rectangle {
-    //枠線
+    //枠線（カーソルがのったら表示する）
     border.width: styleData.selected ? 1 : 0
     border.color: "#222"
     //背景色（カーソルがのったらグレー。普段は透明）
@@ -37,7 +37,7 @@ MenuStyle {
       GradientStop { position: 0.4 ; color: styleData.selected ? "#ddd" : "#00000000" }
       GradientStop { position: 1   ; color: styleData.selected ? "#aaa" : "#00000000" }
     }
-    //アイコン
+    //アイコン [4]
     Image {
       width: height
       anchors.top: parent.top
@@ -47,7 +47,7 @@ MenuStyle {
       fillMode: Image.PreserveAspectFit
       source: styleData.iconSource ? styleData.iconSource : ""
     }
-    //サブメニューのガイド
+    //サブメニューのガイド  [5]
     Image {
       anchors.right: parent.right
       anchors.rightMargin: 5
@@ -57,32 +57,50 @@ MenuStyle {
     }
   }
 
-  //項目の文字列
+  //項目の文字列  [6]
   itemDelegate.label: Item {
     //文字列のサイズより少し大きく
-    width: text.contentWidth + 5
-    height: text.contentHeight + 5
+    width: labelText.contentWidth + 5
+    height: labelText.contentHeight + 5
     //項目の文字列
     Text {
-      id: text
+      id: labelText
       anchors.centerIn: parent
       text: formatMnemonic(styleData.text, true)    //表示する文字列を指定
-      color: styleData.selected ? "black" : "white" //カーソルがのったら白
+      color: "white"
+      states: [ State {
+          when: !styleData.enabled   //無効になったらグレー
+          PropertyChanges { target: labelText; color: "darkgray" }
+        }, State {
+          when: styleData.selected   //カーソルがのったら黒
+          PropertyChanges { target: labelText; color: "black" }
+        }
+      ]
     }
   }
 
-  //ショートカットキーの文字列
+  //ショートカットキーの文字列 [7]
   itemDelegate.shortcut: Text {
+    id: shortcutText
     y: -parent.y + parent.parent.height / 2 - height / 2  //y座標を無理やり調節
     text: styleData.shortcut                              //ショートカットの文字列を指定
-    color: styleData.selected ? "black" : "white"         //カーソルがのったら黒
+    color: "white"
+    states: [ State {
+        when: !styleData.enabled   //無効になったらグレー
+        PropertyChanges { target: shortcutText; color: "darkgray" }
+      }, State {
+        when: styleData.selected   //カーソルがのったら黒
+        PropertyChanges { target: shortcutText; color: "black" }
+      }
+    ]
   }
 
-  //チェックマーク
+  //チェックマーク [8]
   itemDelegate.checkmarkIndicator: Image {
-    source: styleData.checked ? "check.png" : ""
+    visible: styleData.checked
+    source: "check.png"
   }
 
-  //サブメニューがあるときのガイドマーク（ダミー）
+  //サブメニューがあるときのガイドマーク（ダミー） [9]
   itemDelegate.submenuIndicator: Item { }
 }
