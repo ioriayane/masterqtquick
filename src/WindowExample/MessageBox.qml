@@ -3,6 +3,7 @@ import QtQuick.Controls 1.2
 import QtQuick.Window 2.0
 
 Window {
+  id: root
   //ウインドウサイズはメッセージとボタンのサイズに合わせる
   width: content.width + 20
   height: content.height + 20
@@ -28,10 +29,12 @@ Window {
     Row {
       anchors.horizontalCenter: parent.horizontalCenter
       Button {
-        text: "OK"
+        text: "Yes"
         onClicked: {
           accepted()    //了承のシグナルを送信    [5]
           close()       //非表示にする          [6]
+//          root.visible = false            //非表示にする
+//          root.visibility = Window.Hidden //非表示にする
         }
       }
       Button {
@@ -39,6 +42,8 @@ Window {
         onClicked: {
           canceled()    //キャンセルのシグナル送信  [7]
           close()       //非表示にする          [8]
+//          root.visible = false            //非表示にする
+//          root.visibility = Window.Hidden //非表示にする
         }
       }
     }
