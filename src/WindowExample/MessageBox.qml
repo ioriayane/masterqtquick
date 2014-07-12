@@ -6,12 +6,12 @@ Window {
   //ウインドウサイズはメッセージとボタンのサイズに合わせる
   width: content.width + 20
   height: content.height + 20
-  //デフォルトをモーダルに変更
-//  modality: Qt.ApplicationModal
-  modality: Qt.WindowModal
-  //表示するメッセージへのエイリアス
+  //デフォルトをモーダルに変更               [1]
+  modality: Qt.ApplicationModal
+//  modality: Qt.WindowModal
+  //表示するメッセージへのエイリアス            [2]
   property alias message: msg.text
-  //ボタンクリック時のシグナル
+  //ボタンクリック時のシグナル                [3]
   signal accepted()   //了承
   signal canceled()   //キャンセル
 
@@ -20,7 +20,7 @@ Window {
     id: content
     anchors.centerIn: parent
     spacing: 15
-    //メッセージ
+    //メッセージ                        [4]
     Text {
       id: msg
     }
@@ -30,15 +30,15 @@ Window {
       Button {
         text: "OK"
         onClicked: {
-          accepted()    //了承のシグナルを送信
-          close()       //非表示にする
+          accepted()    //了承のシグナルを送信    [5]
+          close()       //非表示にする          [6]
         }
       }
       Button {
         text: "Cancel"
         onClicked: {
-          canceled()    //キャンセルのシグナル送信
-          close()       //非表示にする
+          canceled()    //キャンセルのシグナル送信  [7]
+          close()       //非表示にする          [8]
         }
       }
     }
