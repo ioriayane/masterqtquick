@@ -10,6 +10,5 @@
         <file>sub_nor.png</file>
         <file>sub_sel.png</file>
         <file>DarkMenuBarStyle.qml</file>
-        <file>MenuBarEx.qml</file>
     </qresource>
 </RCC>

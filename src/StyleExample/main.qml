@@ -8,19 +8,12 @@ ApplicationWindow {
   height: 240
   title: qsTr("Style Example")
 
-  //回避策用のコード3行
-//  MenuBarEx {
-//    //使用するメニュー全部に設定するスタイル
-//    menuStyle: Component { DarkMenuStyle {} }
-
-  //回避策を使うときはここから
   menuBar: MenuBar {
     //メニューバーのスタイルを設定            [1]
     style: DarkMenuBarStyle {
       //使用するメニュー全部に設定するスタイル   [2]
       menuStyle: DarkMenuStyle {}
     }
-  //ここまでをコメントアウト
 
     //2つ目のメニュー
     Menu {
