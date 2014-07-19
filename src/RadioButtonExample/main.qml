@@ -18,7 +18,7 @@ ApplicationWindow {
     anchors.centerIn: parent
     title: "Favorite society?"  //タイトルの文字列
     checkable: true             //タイトル横にチェックボックスを追加して使用可/不可を切り替え可能に
-    implicitWidth: 150          //最低の横幅を指定
+    implicitWidth: 150          //推奨の横幅を指定（タイトルの文字列分を確保）
 
     //ラジオボタンを縦に並べる
     Column {

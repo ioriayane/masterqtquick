@@ -11,10 +11,10 @@ ApplicationWindow {
   menuBar: MenuBar {
     //1つ目のメニュー
     Menu {
-      title: "File"
+      title: "&File"
       //ファイルを開く
       MenuItem {
-        text: "Open"
+        text: "&Open"
         shortcut: StandardKey.Open            //ショートカットの設定  [1]
         onTriggered: message.text = "Open!!"
       }
@@ -23,8 +23,8 @@ ApplicationWindow {
       //最近選択した項目
       Menu {
         id: recentItem
-        title: "Recent"
-        visible: recentItem.items.length > 0  //登録されるまで非表示
+        title: "&Recent"
+        enabled: recentItem.items.length > 0  //登録されるまで無効
         //登録された項目を選んだ時の動作を定義  [2]
         Action {
           id: recentItemAction
@@ -43,14 +43,14 @@ ApplicationWindow {
       }
       //アプリケーションを終了
       MenuItem {
-        text: "Quit"
+        text: "&Quit"
         shortcut: StandardKey.Quit            //ショートカットの設定 [6]
         onTriggered: Qt.quit()
       }
     }
     //2つ目のメニュー
     Menu {
-      title: "Status"
+      title: "&Status"
       //2階層目のメニュー1つ目
       Menu {
         title: "Character"

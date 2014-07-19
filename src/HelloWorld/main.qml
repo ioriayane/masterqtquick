@@ -4,7 +4,7 @@ import QtQuick.Controls 1.1
 
 //メニューバー、ステータスバー、ツールバーを追加できるWindowを作成するエレメント　[2]
 ApplicationWindow {
-  //表示状態で作成する [3]
+  //作成したウインドウを表示状態にする [3]
   visible: true
   //コンテンツ領域のサイズ [4]
   width: 640
@@ -14,14 +14,14 @@ ApplicationWindow {
 
   //メニューバーの設定 [5]
   menuBar: MenuBar {
-    //メニューのまとまり「File」を追加
+    //メニューに項目「File」を追加
     Menu {
-      //まとまりの名前を指定
+      //項目の名称を指定
       title: qsTr("File")
 
-      //メニュー項目「Exit」を追加
+      //子項目「Exit」を追加
       MenuItem {
-        //項目の名前を指定
+        //子項目の名称を指定
         text: qsTr("Exit")
         //クリックされた時の動作を指定（アプリの終了）
         onTriggered: Qt.quit();

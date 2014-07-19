@@ -13,7 +13,7 @@ MenuBarStyle {
   }
   //テキスト  [2]
   itemDelegate: Rectangle {
-    //文字列のサイズより少し大きく
+    //文字列のサイズより少し大きく  [3]
     implicitWidth: label.implicitWidth + 10
     implicitHeight: label.implicitHeight + 10
     //枠線（カーソルがのったら表示する）
@@ -30,7 +30,6 @@ MenuBarStyle {
       anchors.centerIn: parent
       text: formatMnemonic(styleData.text, true)    //文字列を指定
       color: styleData.selected ? "black" : "white" //カーソルがのったら黒
-
     }
   }
 }

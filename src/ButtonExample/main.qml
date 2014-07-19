@@ -30,7 +30,7 @@ ApplicationWindow {
     Button {
       id: menuButton
       //非表示した子供のTextエレメントの横幅を間接的に使って自分の横幅を調節する [3]
-      width: menuButtonDummy.width * 1.5
+      width: menuButtonDummy.width + 30
       //ボタンの文字列（メニューが閉じてる状態）
       text: "Society Member"
       //メニューの指定 [4]

@@ -25,9 +25,7 @@ ButtonStyle {
     //ボタンの中心に表示
     verticalAlignment: Text.AlignVCenter
     horizontalAlignment: Text.AlignHCenter
-    //anchorsは使用不可
-    //anchors.centerIn: control
-    //Buttonエレメントに指定された文字列を表示
+    //Buttonエレメントに指定された文字列を表示  [5]
     text: control.text
     //文字色を白色に
     color: "white"

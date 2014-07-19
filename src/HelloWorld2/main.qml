@@ -4,7 +4,7 @@ import QtQuick.Window 2.1
 
 //Windowを作成するエレメント　[2]
 Window {
-  //表示状態で作成する
+  //作成したウインドウを表示状態にする
   visible: true
   //コンテンツ領域のサイズ
   width: 360
