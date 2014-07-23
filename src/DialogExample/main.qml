@@ -12,7 +12,7 @@ ApplicationWindow {
     Menu {
       title: "&File"
       MenuItem {
-        text: "&Exit"
+        text: "&Exit..."
         onTriggered: confirm.open() //確認ダイアログを開く  [1]
       }
     }

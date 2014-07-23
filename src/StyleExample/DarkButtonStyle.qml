@@ -5,7 +5,7 @@ import QtQuick.Controls.Styles 1.2
 ButtonStyle {
   //背景のスタイル   [1]
   background: Rectangle {
-    //最低サイズ   [2]
+    //推奨サイズ   [2]
     implicitWidth: 50
     implicitHeight: 25
     //枠線（フォーカスがあると太くなる）

@@ -10,7 +10,7 @@ ApplicationWindow {
   menuBar: MenuBar {
     Menu {
       title: "&File"
-      MenuItem { text: "&Exit"; onTriggered: Qt.quit() }
+      MenuItem { text: "&Exit..."; onTriggered: Qt.quit() }
     }
     Menu {
       title: "&Help"

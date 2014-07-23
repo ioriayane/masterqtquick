@@ -14,7 +14,7 @@ ApplicationWindow {
       title: "&File"
       //ファイルを開く
       MenuItem {
-        text: "&Open"
+        text: "&Open..."
         shortcut: StandardKey.Open            //ショートカットの設定  [1]
         onTriggered: message.text = "Open!!"
       }
@@ -38,9 +38,7 @@ ApplicationWindow {
         }
       }
       //区切り線
-      MenuSeparator {
-        visible: recentItem.visible           //最近選択した項目に連動して表示
-      }
+      MenuSeparator {}
       //アプリケーションを終了
       MenuItem {
         text: "&Quit"
@@ -56,19 +54,19 @@ ApplicationWindow {
         title: "Character"
         MenuItem {
           text: "Venyera"
-          shortcut: "v"             //ショートカットの設定（小文字のv）         [8]
+          shortcut: "V"             //ショートカットの設定（小文字のv）         [8]
           iconSource: "zvezda.png"  //アイコンの設定                     [9]
           onTriggered: recentItem.addRecentItem(text, iconSource)  //[10]
         }
         MenuItem {
           text: "White Falcon"
-          shortcut: "ctrl+w"        //ショートカットの設定                  [11]
+          shortcut: "Ctrl+W"        //ショートカットの設定                  [11]
           iconSource: "falcon.png"  //アイコンの設定                     [12]
           onTriggered: recentItem.addRecentItem(text, iconSource) //[13]
         }
         MenuItem {
           text: "Kyoshiro Jimon"
-          shortcut: "shift+k"       //ショートカットの設定                  [14]
+          shortcut: "Shift+K"       //ショートカットの設定                  [14]
           iconSource: "tokyo.png"   //アイコンの設定                     [15]
           onTriggered: recentItem.addRecentItem(text, iconSource) //[16]
         }

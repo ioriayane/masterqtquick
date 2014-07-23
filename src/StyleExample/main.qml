@@ -17,7 +17,7 @@ ApplicationWindow {
     //1つ目のメニュー
     Menu {
       title: "&File"
-      MenuItem { text: "&Open"; shortcut: StandardKey.Open; enabled: false }
+      MenuItem { text: "&Open..."; shortcut: StandardKey.Open; enabled: false }
       MenuSeparator {}
       MenuItem { text: "&Quit"; onTriggered: Qt.quit() }
     }
@@ -27,9 +27,9 @@ ApplicationWindow {
       //2階層目のメニュー1つ目
       Menu {
         title: "Character"
-        MenuItem { text: "Venyera"; shortcut: "v"; iconSource: "zvezda.png" }
-        MenuItem { text: "White Falcon"; shortcut: "ctrl+w"; iconSource: "falcon.png" }
-        MenuItem { text: "Kyoshiro Jimon"; shortcut: "shift+k"; iconSource: "tokyo.png" }
+        MenuItem { text: "Venyera"; shortcut: "V"; iconSource: "zvezda.png" }
+        MenuItem { text: "White Falcon"; shortcut: "Ctrl+W"; iconSource: "falcon.png" }
+        MenuItem { text: "Kyoshiro Jimon"; shortcut: "Shift+K"; iconSource: "tokyo.png" }
       }
       //2階層目のメニュー2つ目
       Menu {

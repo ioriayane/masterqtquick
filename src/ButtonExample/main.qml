@@ -30,7 +30,7 @@ ApplicationWindow {
     Button {
       id: menuButton
       //非表示した子供のTextエレメントの横幅を間接的に使って自分の横幅を調節する [3]
-      width: menuButtonDummy.width + 30
+      width: menuButton.implicitWidth + 30
       //ボタンの文字列（メニューが閉じてる状態）
       text: "Society Member"
       //メニューの指定 [4]
@@ -50,15 +50,6 @@ ApplicationWindow {
           text: "Natasha"
           onTriggered: message.text = "Yes Hanazawa!"
         }
-      }
-
-      //Buttonの横幅を調節するためのダミーエレメント [5]
-      Text {
-        id: menuButtonDummy
-        //横幅を測る文字列を指定
-        text: parent.text
-        //非表示
-        visible: false
       }
     }
   }

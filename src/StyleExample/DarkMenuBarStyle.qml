@@ -21,9 +21,9 @@ MenuBarStyle {
     border.color: "#222"
     //背景色（カーソルがのったらグレー。普段は透明）
     gradient: Gradient {
-      GradientStop { position: 0   ; color: styleData.selected ? "#ddd" : "#00000000" }
-      GradientStop { position: 0.4 ; color: styleData.selected ? "#ddd" : "#00000000" }
-      GradientStop { position: 1   ; color: styleData.selected ? "#aaa" : "#00000000" }
+      GradientStop { position: 0   ; color: styleData.selected ? "#ddd" : "transparent" }
+      GradientStop { position: 0.4 ; color: styleData.selected ? "#ddd" : "transparent" }
+      GradientStop { position: 1   ; color: styleData.selected ? "#aaa" : "transparent" }
     }
     Text {
       id: label
