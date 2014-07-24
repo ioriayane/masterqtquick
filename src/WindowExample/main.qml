@@ -16,7 +16,7 @@ ApplicationWindow {
       title: "&Help"
       MenuItem {
         text: "&About..."
-        onTriggered: about.show()   //ダイアログ表示 [1]
+        onTriggered: about.visible = true   //ダイアログ表示       [1]
       }
     }
   }

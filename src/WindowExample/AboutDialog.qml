@@ -21,7 +21,7 @@ Window {
     Row {
       spacing: 10
       //アイコンを表示
-      Image {　source: "star.png" }
+      Image { source: "star.png" }
       //メッセージ
       Column {
         anchors.verticalCenter: parent.verticalCenter
@@ -35,9 +35,9 @@ Window {
       anchors.horizontalCenter: parent.horizontalCenter
       text: "OK"
       onClicked: {
-        close()       //ウインドウを閉じる          [2]
-//          root.visible = false            //非表示にする
-//          root.visibility = Window.Hidden //非表示にする
+        //ウインドウを非表示にする          [2]
+        root.visible = false
+//          root.visibility = Window.Hidden
       }
     }
   }
