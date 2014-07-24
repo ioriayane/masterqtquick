@@ -24,17 +24,30 @@ ApplicationWindow {
       Menu {
         id: recentItem
         title: "&Recent"
-        enabled: recentItem.items.length > 0  //登録されるまで無効
-        //登録された項目を選んだ時の動作を定義  [2]
-        Action {
-          id: recentItemAction
-          onTriggered: message.text =  "recent = %1".arg(source.text)
+        //登録されるまで無効
+        enabled: recentItem.items.length > 0
+        //テンプレートにしたMenuItemを動的生成と管理           [2]
+        Instantiator {
+          //選択した項目の内容管理
+          model: ListModel { id: recentItemModel }
+          //登録する項目のテンプレート                      [3]
+          MenuItem {
+            text: model.text
+            iconSource: model.icon
+            onTriggered: message.text = "recent = %1".arg(text)
+          }
+          //モデルの内容の変化に応じて追加と削除              [4]
+          onObjectAdded: recentItem.insertItem(index, object)
+          onObjectRemoved: recentItem.removeItem(object)
         }
-        //最近選択した項目へ登録する         [3]
+        //最近選択した項目へ登録する         [5]
         function addRecentItem(text, icon){
-          var item = recentItem.addItem(text) //項目を登録           [4]
-          item.action = recentItemAction      //Actionを動作として設定  [5]
-          item.iconSource = icon              //アイコンの設定
+          //Instantiatorのモデルへ追加
+          recentItemModel.insert(0, {"text": text, "icon": icon + ""})
+          //5つより多くなったら最後を1つ消す
+          if(recentItemModel.count > 5){
+            recentItemModel.remove(recentItemModel.count-1)
+          }
         }
       }
       //区切り線
