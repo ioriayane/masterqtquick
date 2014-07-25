@@ -3,11 +3,14 @@ import QtQuick.Controls 1.1
 import QtQuick.Layouts 1.1                //追加
 
 GridLayout {
-  property alias indexText: index.text  //連番の指定
-  rows: 3                               //グリッドを3行構成         [1]
+  //実際には縦に広がるとカッコ悪いのでanchorsはこちらでしょう
+  //anchors.left: parent.left
+  //anchors.right: parent.right
+  property alias indexText: index.text
+  rows: 3                               //グリッドを3行構成         [2]
   columnSpacing: 5                      //列の間隔を少し
   rowSpacing: 1                         //行の間隔をほぼなし
-  flow: GridLayout.TopToBottom          //グリッドの配置順を上から下へ  [2]
+  flow: GridLayout.TopToBottom          //グリッドの配置順を上から下へ  [3]
   //複数並べるとき用の連番
   Text {
     id: index
@@ -19,29 +22,23 @@ GridLayout {
   //残り時間
   Text {
     id: remainTime
+    Layout.rowSpan: 2                   //2行分結合状態
     clip: true
-    Layout.minimumWidth: implicitWidth      //横幅の最低値をTextの推奨値にする
-    Layout.fillWidth: true                  //横方向を目一杯広げる
-    Layout.rowSpan: 2                       //2行分結合状態
-    horizontalAlignment: Text.AlignHCenter  //文字列を横方向の中心に配置
     text: "05:59:59"
     font.pointSize: 16
   }
   //進捗バー
   ProgressBar {
-    Layout.fillWidth: true            //横方向に他のマスに合わせていっぱいに広げる [5]
-    Layout.maximumHeight: 8           //最大の高さとして8を指定      [6]
-    Layout.columnSpan: 3              //3列分結合状態            [7]
+    Layout.fillWidth: true              //横方向に他のマスに合わせていっぱいに広げる [5]
+    Layout.maximumHeight: 8             //最大の高さとして8を指定      [6]
+    Layout.columnSpan: 3                //3列分結合状態            [7]
     maximumValue: 100
     minimumValue: 0
     value: 90
   }
   //セパレータ
   Text {
-    Layout.minimumWidth: implicitWidth      //横幅の最低値をTextの推奨値にする
-    Layout.fillWidth: true                  //横方向を目一杯広げる
     Layout.rowSpan: 2                       //2行分結合状態
-    horizontalAlignment: Text.AlignHCenter
     text: "-"
     font.pointSize: 10
   }
@@ -59,7 +56,8 @@ GridLayout {
   }
   //開始ボタン
   Button {
-    Layout.preferredWidth: 50         //推奨サイズを指定（基本このサイズを維持）
+    Layout.fillWidth: true
+    Layout.minimumWidth: 50         //最小サイズを指定（基本このサイズを維持）
     Layout.rowSpan: 3                 //3行分結合状態
     text: "Start"
   }
