@@ -38,9 +38,9 @@ GridLayout {
   }
   //セパレータ
   Text {
-    Layout.minimumWidth: implicitWidth
-    Layout.fillWidth: true
-    Layout.rowSpan: 2                 //2行分結合状態
+    Layout.minimumWidth: implicitWidth      //横幅の最低値をTextの推奨値にする
+    Layout.fillWidth: true                  //横方向を目一杯広げる
+    Layout.rowSpan: 2                       //2行分結合状態
     horizontalAlignment: Text.AlignHCenter
     text: "-"
     font.pointSize: 10
@@ -59,13 +59,13 @@ GridLayout {
   }
   //開始ボタン
   Button {
-    Layout.preferredWidth: 50
+    Layout.preferredWidth: 50         //推奨サイズを指定（基本このサイズを維持）
     Layout.rowSpan: 3                 //3行分結合状態
     text: "Start"
   }
   //設定ボタン
   Button {
-    Layout.preferredWidth: 50
+    Layout.preferredWidth: 50         //推奨サイズを指定（基本このサイズを維持）
     Layout.rowSpan: 3                 //3行分結合状態
     text: "Set"
   }
