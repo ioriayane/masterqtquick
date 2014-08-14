@@ -40,11 +40,9 @@ MenuStyle {
     //アイコン [4]
     Image {
       width: height
-      anchors.top: parent.top
       anchors.left: parent.left
-      anchors.bottom: parent.bottom
       anchors.margins: 2
-      fillMode: Image.PreserveAspectFit
+      anchors.verticalCenter: parent.verticalCenter
       source: styleData.iconSource ? styleData.iconSource : ""
     }
     //サブメニューのガイド  [5]
@@ -58,31 +56,27 @@ MenuStyle {
   }
 
   //項目の文字列  [6]
-  itemDelegate.label: Item {
-    //文字列のサイズより少し大きく
-    width: labelText.contentWidth + 5
-    height: labelText.contentHeight + 5
-    //項目の文字列
-    Text {
-      id: labelText
-      anchors.centerIn: parent
-      text: formatMnemonic(styleData.text, true)    //表示する文字列を指定
-      color: "white"
-      states: [ State {
-          when: !styleData.enabled   //無効になったらグレー
-          PropertyChanges { target: labelText; color: "darkgray" }
-        }, State {
-          when: styleData.selected   //カーソルがのったら黒
-          PropertyChanges { target: labelText; color: "black" }
-        }
-      ]
-    }
+  itemDelegate.label: Text {
+    id: labelText
+    width: implicitWidth + 10
+    height: implicitHeight + 10
+    verticalAlignment: Text.AlignVCenter
+    text: formatMnemonic(styleData.text, true)    //表示する文字列を指定
+    color: "white"
+    states: [ State {
+        when: !styleData.enabled   //無効になったらグレー
+        PropertyChanges { target: labelText; color: "darkgray" }
+      }, State {
+        when: styleData.selected   //カーソルがのったら黒
+        PropertyChanges { target: labelText; color: "black" }
+      }
+    ]
   }
 
   //ショートカットキーの文字列 [7]
   itemDelegate.shortcut: Text {
     id: shortcutText
-    y: -parent.y + parent.parent.height / 2 - height / 2  //y座標を無理やり調節
+    verticalAlignment: Text.AlignVCenter
     text: styleData.shortcut                              //ショートカットの文字列を指定
     color: "white"
     states: [ State {
